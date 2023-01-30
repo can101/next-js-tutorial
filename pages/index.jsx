@@ -1,4 +1,3 @@
-// pages/index.jsx
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
