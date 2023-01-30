@@ -1,7 +1,16 @@
 {
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@theme-ui/presets": "^0.15.4",
     "next": "^13.1.6",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  }
+    "react-dom": "^18.2.0",
+    "theme-ui": "^0.15.4"
+  },
+  "scripts": {
+    "dev": "next",
+    "start": "next start",
+    "build": "next build"
+  },
+  "devDependencies": {}
 }
