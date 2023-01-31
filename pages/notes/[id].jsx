@@ -11,7 +11,7 @@ export default ({ note }) => {
 }
 
 export async function getServerSideProps({ params, req, res }) {
-    const url = await `${process.env.API_URL}/api/note/${params.id}`;
+    const url =  `${process.env.API_URL}/api/note/${params.id}`;
     const response = await fetch(url);
     if (!response.ok) {
         res.writeHead(302, {

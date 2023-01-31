@@ -2,6 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import Link from 'next/link'
+import axios from 'axios'
 
 export default ({ notes }) => {
     return (
@@ -24,8 +25,9 @@ export default ({ notes }) => {
 }
 
 export async function getServerSideProps() {
-    const url = await `${process.env.API_URL}/api/note`;
-    const res = await fetch(url);
+    // const url = `${process.env.API_URL}/api/note`;
+    // console.log(url)
+    const res = await fetch("http://localhost:3000/api/note");
     const data = await res.json();
     console.log(data);
     return {
