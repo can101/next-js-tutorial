@@ -1,13 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
 
-export default ({note}) => {
-    console.log('====================================');
-    console.log(note);
-    console.log('====================================');
+export default ({ note }) => {
     return (
         <div sx={{ variant: 'containers.page' }}>
             <h1>Note: {note.title} </h1>
@@ -16,8 +11,8 @@ export default ({note}) => {
 }
 
 export async function getServerSideProps({ params, req, res }) {
-    const response = await fetch(`http://localhost:3000/api/note/${params.id}`);
-
+    const url = await `${process.env.API_URL}/api/note/${params.id}`;
+    const response = await fetch(url);
     if (!response.ok) {
         res.writeHead(302, {
             Location: '/notes'

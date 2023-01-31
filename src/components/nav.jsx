@@ -8,6 +8,7 @@ const Nav = () => (
         <nav sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', variant: 'containers.page', height: '100%' }}>
             <Link href="/" sx={{ fontWeight: 'bold', fontSize: 4, cursor: 'pointer' }}>Note App</Link>
             <Link href="/notes" sx={{ color: 'text', fontSize: 3, cursor: 'pointer' }}>notes</Link>
+            <a href={'https://frontendmasters.com'}>Help</a>
         </nav>
     </header>
 )
