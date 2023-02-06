@@ -4,13 +4,13 @@ import { jsx } from 'theme-ui'
 import Link from 'next/link'
 import axios from 'axios'
 
-export default ({ notes }) => {
+export default ({ data }) => {
     return (
         <div sx={{ variant: 'containers.page' }}>
             <h1>My Notes</h1>
 
             <div sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
-                {notes.data.map(note => (
+                {data.data.map(note => (
                     <div key={note.id} sx={{ width: '33%', p: 2 }}>
                         <Link href="/notes/[id]" as={`/notes/${note.id}`} sx={{ textDecoration: 'none', cursor: 'pointer' }}>
                             <div sx={{ variant: 'containers.card', }}>
@@ -32,7 +32,7 @@ export async function getServerSideProps() {
     console.log(data);
     return {
         props: {
-            notes: data
+            data
         }
     }
 }
